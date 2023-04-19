@@ -1,0 +1,167 @@
+@import '../../vars.scss';
+
+header {
+	width: 100%;
+	height: 5rem;
+	position: fixed;
+	z-index: 100;
+	padding: 1rem 0;
+	background-color: $dark-accent-color;
+	display: flex;
+	align-items: center;
+	box-shadow: 0 3px 3px #1d1d1f;
+	.container {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
+
+.header-heading {
+	position: relative;
+	padding: 0.5rem 0.5rem;
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 800;
+	font-size: 1.5rem;
+	cursor: pointer;
+	color: $dark-text-color;
+	letter-spacing: 0.1rem;
+	span {
+		position: relative;
+		z-index: 2;
+	}
+	&:before {
+		content: '';
+		width: 0%;
+		height: 100%;
+		position: absolute;
+		background-color: $dark-text-color;
+		left: 0;
+		top: 0;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		z-index: 0;
+	}
+	&:hover {
+		color: $dark-accent-color;
+	}
+	&:hover::before {
+		width: 100%;
+	}
+}
+
+.header-button {
+	position: relative;
+	height: 2rem;
+	padding: 0.5rem 1rem;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 1.25rem;
+	font-weight: 600;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	color: inherit;
+	cursor: pointer;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	span,
+	svg {
+		z-index: 2;
+	}
+	&:before {
+		content: '';
+		width: 0%;
+		height: 100%;
+		position: absolute;
+		background: $dark-text-color;
+		left: 0;
+		top: 0;
+		-webkit-transition: all 0.2s ease;
+		transition: all 0.2s ease;
+		z-index: 0;
+	}
+	&:hover span {
+		color: $dark-accent-color;
+	}
+	&:hover svg {
+		color: $dark-accent-color;
+	}
+	&:hover::before {
+		width: 100%;
+	}
+}
+
+// LIGHT MODE STYLING
+
+body.light-theme {
+	header {
+		background-color: $light-bg-color;
+	}
+	.header-heading {
+		color: $light-text-color;
+		&:before {
+			background-color: $dark-bg-color;
+		}
+		&:hover {
+			color: $dark-text-color;
+		}
+	}
+	.header-button {
+		&:before {
+			background-color: $dark-bg-color;
+		}
+		&:hover span {
+			color: $dark-text-color;
+		}
+		&:hover svg {
+			color: $dark-text-color;
+		}
+	}
+}
+
+// RESPONSIVE LAYOUT
+
+@media screen and (max-width: 700px) {
+	.header-button span {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.header-heading:hover::before,
+	.header-button:hover::before {
+		width: 0%;
+		z-index: 0;
+	}
+
+	.header-heading:hover {
+		color: $dark-text-color;
+	}
+
+	.header-button:hover span,
+	.header-button:hover svg {
+		background-color: inherit;
+		color: inherit;
+	}
+
+	// LIGHT MODE RESPONSIVE STYLING
+
+	body.light-theme .header-heading:hover {
+		color: $light-text-color;
+	}
+
+	body.light-theme .header-heading:hover::before,
+	body.light-theme .header-button:hover::before {
+		width: 0%;
+		z-index: 0;
+	}
+
+	body.light-theme .header-button:hover span,
+	body.light-theme .header-button:hover svg {
+		background-color: inherit;
+		color: inherit;
+	}
+}

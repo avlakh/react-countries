@@ -1,0 +1,54 @@
+@import '../../vars.scss';
+
+#country-page {
+	padding: 3rem 0;
+}
+
+.country-page-back-button {
+	color: inherit;
+	padding: 1rem 2rem;
+	text-decoration: none;
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	gap: 0.5rem;
+	max-width: 8rem;
+	box-shadow: 0 0 2px 2px $dark-accent-color;
+	border-radius: 0.5rem;
+	margin-bottom: 3rem;
+	&:hover {
+		background-color: hsl(209, 23%, 27%);
+	}
+	span {
+		-webkit-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease;
+	}
+	&:hover span:first-of-type {
+		-webkit-transform: translateX(-10px);
+		transform: translateX(-10px);
+	}
+}
+
+// LIGHT MODE STYLING
+
+body.light-theme {
+	.country-page-back-button {
+		background-color: $light-accent-color;
+		box-shadow: none;
+		&:hover,
+		&:active,
+		&:focus {
+			box-shadow: 0 3px 10px 0 hsl(240, 3%, 12%),
+				#1d1d1f 0px 20px 20px -20px;
+			background-color: $light-bg-color;
+		}
+	}
+}
+
+// RESPONSIVE LAYOUT
+
+@media screen and (max-width: 500px) {
+	.country-page-back-button {
+		max-width: 100%;
+	}
+}
