@@ -47,9 +47,9 @@ const Header = () => {
 	return (
 		<header>
 			<div className="container">
-				<Link to="/" className="header-heading">
-					<span>Where in the world?</span>
-				</Link>
+				<h1 className="header-heading">
+					<Link to="/">Where in the world?</Link>
+				</h1>
 				<button className="header-button" onClick={colorModeToggle}>
 					{colorModeLayout}
 				</button>

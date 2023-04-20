@@ -11,7 +11,14 @@ const CountryItem = (props) => {
 			<div className="country-item">
 				<Link to={country.cca3} />
 				<div className="country-item-img">
-					<img src={country.flags.png} alt={country.flags.alt} />
+					<img
+						src={country.flags.png}
+						alt={
+							country.flags.alt
+								? country.flags.alt
+								: country.name.official
+						}
+					/>
 				</div>
 				<div className="country-item-text">
 					<h3>{country.name.official}</h3>

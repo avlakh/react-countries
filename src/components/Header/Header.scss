@@ -21,15 +21,19 @@ header {
 	position: relative;
 	padding: 0.5rem 0.5rem;
 	text-transform: uppercase;
-	text-decoration: none;
 	font-weight: 800;
 	font-size: 1.5rem;
 	cursor: pointer;
-	color: $dark-text-color;
 	letter-spacing: 0.1rem;
-	span {
+	a {
+		color: $dark-text-color;
+		text-decoration: none;
+		text-align: left;
 		position: relative;
 		z-index: 2;
+		&:hover {
+			color: $dark-accent-color;
+		}
 	}
 	&:before {
 		content: '';
@@ -42,9 +46,6 @@ header {
 		-webkit-transition: all 0.2s ease;
 		transition: all 0.2s ease;
 		z-index: 0;
-	}
-	&:hover {
-		color: $dark-accent-color;
 	}
 	&:hover::before {
 		width: 100%;

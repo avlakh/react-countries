@@ -21,6 +21,7 @@ const SearchFilter = (props) => {
 					className="region-filter-select"
 					value={props.filterInput}
 					onChange={(e) => props.filterByRegion(e.target.value)}
+					name="regions"
 				>
 					<option value="All">Filter by Region</option>
 					<option value="Africa">Africa</option>
