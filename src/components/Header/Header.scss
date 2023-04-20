@@ -102,12 +102,14 @@ body.light-theme {
 		background-color: $light-bg-color;
 	}
 	.header-heading {
-		color: $light-text-color;
+		a {
+			color: $light-text-color;
+			&:hover {
+				color: $dark-text-color;
+			}
+		}
 		&:before {
 			background-color: $dark-bg-color;
-		}
-		&:hover {
-			color: $dark-text-color;
 		}
 	}
 	.header-button {
