@@ -19,7 +19,7 @@ const HomePage = (props) => {
 							setSearchInput(value.toLowerCase());
 							let countriesResult;
 							const searchedCountries = [...countries];
-							if (filterInput !== '') {
+							if (filterInput !== '' && filterInput !== 'All') {
 								countriesResult = searchedCountries
 									.filter(
 										(country) =>
