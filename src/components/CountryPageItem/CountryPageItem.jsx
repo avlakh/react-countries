@@ -1,6 +1,7 @@
 import './CountryPageItem.scss';
 import { numberFormatter } from '../../helpers/helper-functions';
 import { Link } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const CountryPageItem = (props) => {
 	const { country } = props;
@@ -21,7 +22,7 @@ const CountryPageItem = (props) => {
 		<>
 			<section className="country-page">
 				<div className="country-page-img">
-					<img
+					<LazyLoadImage
 						src={country.flags.png}
 						alt={`The flag of ${country.name.official}`}
 					/>

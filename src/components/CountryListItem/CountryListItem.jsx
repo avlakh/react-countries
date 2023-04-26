@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './CountryListItem.scss';
 import { numberFormatter } from '../../helpers/helper-functions';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const CountryItem = (props) => {
 	const { country } = props;
@@ -11,7 +12,7 @@ const CountryItem = (props) => {
 			<div className="country-item">
 				<Link to={country.cca3} />
 				<div className="country-item-img">
-					<img
+					<LazyLoadImage
 						src={country.flags.png}
 						alt={
 							country.flags.alt
